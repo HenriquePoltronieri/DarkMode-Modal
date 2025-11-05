@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+:root {
+    --background: rgb(0, 255, 106);
+    --modal-background: rgb(2, 167, 71);
+}
+
+.darkmode {
+    --background: rgb(46, 46, 46);
+    --modal-background: rgb(140, 3, 204);
+}
+
+body {
+    background-color: var(--background);
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "modal";
+}
+
+
+
+
+
+/* Header */
+#container-header {
+    grid-area: header;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#container-header button {
+    width: 170px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+#container-header button:hover {
+    scale: calc(1.1);
+}
+
+#container-header label:hover {
+    scale: calc(1.1);
+}
+
+
+
+
+
+/* Modal triggers */
+#container-modal {
+    grid-area: modal;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0px 100px 30px 100px;
+    gap: 40px;
+}
+
+.modal-trigger {
+    width: 300px;
+    height: 300px;
+    background-color: var(--modal-background);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.modal-trigger:hover {
+    transform: translateY(-20px);
+}
+
+/* Dialog do Modal */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 1200px;
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    padding: 20px;
+    background-color: var(--modal-background);
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: 1000;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.modal-content p {
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 25px;
+}
+
+
+
+
+/* Footer */
+footer {
+    background-color: var(--modal-background);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
