@@ -19,11 +19,12 @@ body {
     width: 100%;
 
     display: grid;
-    grid-template-rows: 150px 1fr;
+    grid-template-rows: 150px 1fr 150px;
     grid-template-columns: 1fr;
     grid-template-areas:
         "header"
-        "modal";
+        "modal"
+        "footer";
 }
 
 
@@ -126,7 +127,9 @@ body {
 
 
 /* Footer */
-footer {
+#container-footer {
+    grid-area: footer;
+
     background-color: var(--modal-background);
     color: #fff;
     text-align: center;
